@@ -1,0 +1,38 @@
+
+<div class="container my-5">
+    <form #form="ngForm" (ngSubmit)="updateRecipe()">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="Id">Id</label>
+                <input type="text" class="form-control" id="id" readonly
+                name="id" [(ngModel)]="recipeInfo.id">
+              </div>
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Recipe</label>
+            <input type="text" class="form-control" id="Recipe" 
+            name="Recipe" [(ngModel)]="recipeInfo.recipe">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">Amount</label>
+            <input type="number" class="form-control" id="Amount" 
+            name="Amount" [(ngModel)]="recipeInfo.amount">
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputAddress">Restaurant</label>
+          <input type="text" class="form-control" id="Restaurant"
+          name="Restaurant" [(ngModel)]='recipeInfo.restaurant'>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity">City</label>
+            <input type="text" class="form-control" id="City" 
+            name="City" [(ngModel)]="recipeInfo.city">
+          </div>
+        </div>
+          <button type="submit" class="btn btn-primary mr-5" >Update the Order</button>
+          <button type="button" class="btn btn-danger"  (click)="deleteRecipe(recipeInfo.id)">Delete the Order</button>
+        
+        
+      </form>  
+    </div>
