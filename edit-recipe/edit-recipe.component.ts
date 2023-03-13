@@ -10,12 +10,13 @@ import { RecipesService } from 'src/app/services/recipes.service';
 })
 export class EditRecipeComponent implements OnInit{
   recipeInfo: Recipe = {
-    id:'',
+    
     recipe:'',
     amount: 0,
     restaurant:'',
     city:''
   };
+
 
   constructor(private route: ActivatedRoute, private recipesService: RecipesService, private router: Router)
     {
@@ -32,7 +33,9 @@ export class EditRecipeComponent implements OnInit{
           {
             this.recipesService.getRecipe(id)
             .subscribe({
+              
               next: (response) => {
+                
                 this.recipeInfo = response;
               }
             })
@@ -41,19 +44,22 @@ export class EditRecipeComponent implements OnInit{
       })
     }
 
-    updateRecipe()
-    {
-      this.recipesService.updateRecipe(this.recipeInfo.id, this.recipeInfo)
-      .subscribe({
-        next: (response) => {
-          this.router.navigate([''])
-        }
-      })
-    }
 
-    deleteRecipe(id: string)
+  updateRecipe()
+  {
+    alert("Are you Sure?");
+    this.recipesService.updateRecipe(<string>this.recipeInfo.id,this.recipeInfo)
+    .subscribe({
+      next:(response)=>{
+        this.router.navigate(['recipes']);
+      }
+    })
+  }
+
+    deleteRecipe(id?: string)
     {
-      this.recipesService.deleteRecipe(id)
+      alert("Are you Sure?");
+      this.recipesService.deleteRecipe(<string>id)
       .subscribe({
         next: (res) => {
           this.router.navigate(['']);

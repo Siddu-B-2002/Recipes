@@ -1,5 +1,5 @@
 
-<div class="container my-5">
+<div class="container my-5 ">
     <form #form="ngForm" (ngSubmit)="updateRecipe()">
         <div class="form-row">
             <div class="form-group col-md-6">
@@ -31,9 +31,7 @@
             name="City" [(ngModel)]="recipeInfo.city">
           </div>
         </div>
-          <button type="submit" class="btn btn-primary mr-5" >Update the Order</button>
+          <button type="submit" class="btn btn-primary mr-5">Update the Order</button>
           <button type="button" class="btn btn-danger"  (click)="deleteRecipe(recipeInfo.id)">Delete the Order</button>
-        
-        
       </form>  
     </div>

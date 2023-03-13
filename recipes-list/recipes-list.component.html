@@ -12,13 +12,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor='let reci of recipes'>
+      <tr *ngFor='let reci of recipes' >
         <td>{{reci.id}}</td>
         <td>{{reci.recipe}}</td>
         <td>{{reci.amount}}</td>
         <td>{{reci.restaurant}}</td>
         <td>{{reci.city}}</td>
-        <td><a [routerLink]="['/recipes','edit', reci.id]">More</a></td>
+        <td><a [routerLink]="['/recipes','edit', reci.id]"><i class="fa fa-solid fa-right-long fa-2x text-success"></i></a></td>
       </tr>
     </tbody>
 </table>
